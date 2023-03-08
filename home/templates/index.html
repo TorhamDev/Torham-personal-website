@@ -155,7 +155,7 @@
 
 
     <h1 id="type-text"></h1>
-    <a id="date" href="https://www.youtube.com/watch?v=BR7m_2D_-Uw">- جادی میرمیرانی، درک برنامه نویسی قسمت اول</a>
+    <a id="date" href="{{ index_data.main_text_source_link }}">{{ index_data.main_text_source }}</a>
 
     <div class="footer">
         <a href="mailto:TorhamDev@gmail.com">torhamdev@gmail.com</a> • <a
@@ -169,7 +169,7 @@
 
     <script>
         var i = 0;
-        var txt = 'هیچ کس، حق نداره به شما بگه برنامه‌نویسی رو نمی‌فهمید. مهمل‌ترین کار جهانهِ برنامه‌نویسی.'; /* The text */
+        var txt = '{{ index_data.main_text }}'; /* The text */
         var speed = 70; /* The speed/duration of the effect in milliseconds */
 
         function typeWriter() {
