@@ -5,4 +5,8 @@ class IndexView(View):
 
     def get(self, request):
 
-        return render("index.html")
+        return render(
+            request=request,
+            template_name="index.html",
+            context={}
+        )

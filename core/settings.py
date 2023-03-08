@@ -27,7 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+LOCAL_APPS = [
+    "home.apps.HomeConfig",
+    "utils.apps.UtilsConfig",
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    *LOCAL_APPS,
 ]
 
 MIDDLEWARE = [
