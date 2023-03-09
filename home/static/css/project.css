@@ -1,0 +1,33 @@
+.project_div {
+    text-align: center;
+}
+
+.project_description {
+    width: 97%;
+    margin: 1%;
+    line-height: 40px;
+    border-radius: 8px;
+    font-size: 20px;
+
+    transition: all .6s;
+}
+
+.project_description:hover {
+    transition: all .6s;
+    box-shadow: 0px 2px 0px 2px whitesmoke;
+}
+
+p {
+    padding: 3px;
+}
+
+.project_link_svg {
+    height: 37px;
+    width: 37px;
+}
+
+hr {
+    border: 0;
+    background-color: #fff;
+    border-top: 3px dashed #000000;
+  }
