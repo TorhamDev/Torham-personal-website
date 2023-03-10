@@ -20,3 +20,6 @@ class ProjectPage(BaseModel):
         default=PROJECT_LOCATION_GITHUB,
         help_text=""
     )
+
+    def __str__(self) -> str:
+        return self.project_name
