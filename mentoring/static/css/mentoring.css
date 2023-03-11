@@ -1,0 +1,33 @@
+.mentoring_description_div {
+    margin: 3%;
+    padding: 10px;
+    text-align: center;
+    line-height: 37px;
+    font-size: 23px;
+}
+
+.mentoring_sprator {
+    height: 4px;
+    width: 30%;
+    background-color: wheat;
+    margin-bottom: 20px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 542px;
+}
