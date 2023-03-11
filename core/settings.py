@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 LOCAL_APPS = [
     "home.apps.HomeConfig",
     "utils.apps.UtilsConfig",
+    "mentoring.apps.MentoringConfig",
 ]
 # Application definition
 
