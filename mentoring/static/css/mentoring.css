@@ -1,41 +1,70 @@
+* {
+  font-family: mikhak;
+}
+
 .mentoring_description_div {
-    margin: 3%;
-    padding: 10px;
-    text-align: center;
-    line-height: 37px;
-    font-size: 23px;
+  padding: 10px;
+  text-align: center;
+  line-height: 37px;
+  font-size: 23px;
+  width: 95%;
+  margin: auto;
 }
 
 .mentoring_sprator {
-    height: 4px;
-    width: 30%;
-    background-color: wheat;
-    margin-bottom: 20px;
+  height: 5px;
+  width: 50%;
+  background-color: #6c5ce7;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black;
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: black;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: black;
-  }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #636e72;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #636e72;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #636e72;
+}
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 542px;
-}
-.center {
-  border: 2px solid blue;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: auto;
-  position: relative;
-  text-align: center;
-  top: 50%;
-  width: 29%;  
+}
+
+form input,
+form textarea,
+button.btn {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: 3px solid #111;
+  transition: border 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border: 3px solid #6c5ce7;
+}
+
+button.btn {
+  cursor: pointer;
+  background-color: #6c5ce7;
+  color: #fefefe;
+  margin-bottom: 200px;
 }
