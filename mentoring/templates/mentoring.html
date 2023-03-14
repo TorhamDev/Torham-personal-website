@@ -22,6 +22,20 @@
         </a>
     </center>
 
+{% elif  message == "notsended"%}
+<center>
+    <h1>
+یک مشکلی داریم. درخواستت ارسال نشد. احتمالا فرم کامل پر نکردی یا یک مشکلی از سمت سرور بوده :( فرم دوباره پر کن لطفا
+
+    </h1>
+
+    <a href="/mentoring">
+        <button class="dark_white_btn">
+            پُر کردن دوباره
+        </button>
+    </a>
+</center>
+
 {% else %}
     <div class="mentoring_description_div">
         <p class="mentoring_description">
@@ -34,9 +48,9 @@
 
     <div class="mentoring_form_div center">
         <form action="/mentoring/" method="post">
-            <input class="mentoring_input" type="text" maxlength="100" placeholder="اسمت چیه؟">
-            <input class="mentoring_input" type="text" maxlength="50" placeholder="شماره تلفن؟">
-            <input class="mentoring_input" type="text" placeholder="مبلغ پیشنهادی به تومن">
+            <input name="name" class="mentoring_input" type="text" minlength="1" maxlength="100" placeholder="اسمت چیه؟">
+            <input name="phone_number" class="mentoring_input" minlength="10" type="text" maxlength="50" placeholder="شماره تلفن؟">
+            <input name="offered_price" class="mentoring_input" minlength="1" type="text" placeholder="مبلغ پیشنهادی به تومن">
             <textarea name="mentor_description" id="mentoring_description" rows="7" placeholder="اگه حرفی داری بنویس. :) مثلا روش ارتباطی دیگه یا توضیحی درباره شخصیت خودت."></textarea>
             {% csrf_token %}
             <button class="btn">ارسال درخواست</button>
