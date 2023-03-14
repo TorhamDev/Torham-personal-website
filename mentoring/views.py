@@ -11,3 +11,13 @@ class MentoringPage(View):
             template_name="mentoring.html",
             context={}
         )
+
+    def post(self, request):
+
+        return render(
+            request=request,
+            template_name="mentoring.html",
+            context={
+                "message": "sended",
+            }
+        )

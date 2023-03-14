@@ -106,14 +106,14 @@ a {
   background-color: #111;
 }
 
-.footer > div {
+.footer>div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.footer > div > a {
+.footer>div>a {
   font-size: 18px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -148,14 +148,35 @@ a {
 }
 
 @media screen and (max-width: 800px) {
-  .footer > div {
+  .footer>div {
     flex-direction: column;
   }
+
   .footer .social {
     margin-right: 0;
     margin-top: 20px;
   }
+
   .footer hr {
     width: 80%;
   }
+}
+
+
+.dark_white_btn {
+  height: 64px;
+  width: 171px;
+  border: solid 2px white;
+  border-radius: 23px;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  transition: all 0.6s;
+}
+
+.dark_white_btn:hover{
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  transition: all 0.6s;
 }

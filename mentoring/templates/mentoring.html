@@ -8,32 +8,49 @@
 
 {% block content %}
 
-<div class="mentoring_description_div">
-    <p class="mentoring_description">
-        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
-        بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
-        هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-        متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
-        پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط
-        سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
-        طراحی اساسا مورد استفاده قرار گیرد.
-    </p>
 
-</div>
+{% if message == "sended" %}
+    <center>
+        <h1>
+            هورا درخواست ارسال شد. درخواستت بررسی میکنم باهات تماس میگیرم :)
+        </h1>
 
-<hr class="mentoring_sprator">
+        <a href="/">
+            <button class="dark_white_btn">
+                باشه، ممنون
+            </button>
+        </a>
+    </center>
 
-<div class="mentoring_form_div center">
-    <form action="#" method="post">
-        <input class="mentoring_input" type="text" placeholder="اسمت چیه؟">
-        <input class="mentoring_input" type="text" placeholder="شماره تلفن؟">
-        <input class="mentoring_input" type="text" placeholder="مبلغ پیشنهادی به تومن">
-        <textarea name="mentor_description" id="mentoring_description" rows="7" placeholder="اگه حرفی داری بنویس. :) مثلا روش ارتباطی دیگه یا توضیحی درباره شخصیت خودت."></textarea>
-        <button class="btn">ارسال درخواست</button>
-    </form>
+{% else %}
+    <div class="mentoring_description_div">
+        <p class="mentoring_description">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
+            هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
+            متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
+            پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط
+            سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
+            طراحی اساسا مورد استفاده قرار گیرد.
+        </p>
 
-</div>
+    </div>
 
+    <hr class="mentoring_sprator">
+
+    <div class="mentoring_form_div center">
+        <form action="/mentoring/" method="post">
+            <input class="mentoring_input" type="text" maxlength="100" placeholder="اسمت چیه؟">
+            <input class="mentoring_input" type="text" maxlength="50" placeholder="شماره تلفن؟">
+            <input class="mentoring_input" type="text" placeholder="مبلغ پیشنهادی به تومن">
+            <textarea name="mentor_description" id="mentoring_description" rows="7" placeholder="اگه حرفی داری بنویس. :) مثلا روش ارتباطی دیگه یا توضیحی درباره شخصیت خودت."></textarea>
+            {% csrf_token %}
+            <button class="btn">ارسال درخواست</button>
+        </form>
+
+    </div>
+
+{% endif %}
 
 
 
