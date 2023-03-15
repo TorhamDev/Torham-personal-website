@@ -1,0 +1,32 @@
+.about_user_image {
+    height: 300px;
+    width: 300px;
+    border-radius: 24px;
+    margin-left: 59px;
+    margin-top: 10px;
+    transition: all .6s;
+}
+
+.about_user_image:hover {
+    transition: all .6s;
+    height: 400px;
+}
+
+.person_description_about {
+    display: flex;
+
+}
+
+.about_description {
+    margin: 60px;
+    padding: 10px;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: all .6s;
+}
+
+.about_description:hover {
+    transition: all .6s;
+    box-shadow: 0px 2px 0px 2px whitesmoke;
+}
