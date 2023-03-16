@@ -186,3 +186,34 @@ a {
   height: 469px;
   width: 416px;
 }
+
+/* sweet alert */
+.swal-overlay {
+  background-color: rgba(47, 49, 49, 0.534);
+}
+
+.swal-modal {
+  background-color: #111;
+}
+
+.swal-text {
+  color: white;
+  font-size: 17px;
+}
+
+.swal-title {
+  color: white;
+  margin-top: 0px;
+}
+
+.swal-button--confirm {
+  color: black;
+  background-color: aqua;
+  font-size: 20px;
+}
+
+.swal-button--cancel {
+  color: black;
+
+  font-size: 20px;
+}
