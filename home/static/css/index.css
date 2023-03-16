@@ -174,9 +174,15 @@ a {
   transition: all 0.6s;
 }
 
-.dark_white_btn:hover{
+.dark_white_btn:hover {
   cursor: pointer;
   color: black;
   background-color: white;
   transition: all 0.6s;
+}
+
+.end_of_page {
+  background-color: transparent;
+  height: 469px;
+  width: 416px;
 }

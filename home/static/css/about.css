@@ -36,10 +36,12 @@
     .person_description_about {
         flex-direction: column;
     }
-    .about_user_image{
+
+    .about_user_image {
         width: 222px;
         margin-right: 35%;
     }
+
     .about_user_image:hover {
         transition: all .6s;
         height: 300px;
@@ -47,10 +49,33 @@
 
 
 }
+
 @media screen and (max-width: 600px) {
-    .about_user_image{
+    .about_user_image {
         display: none;
     }
 
+
+}
+
+.about_sprator {
+    height: 5px;
+    width: 50%;
+    background-color: #6c5ce7;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact_info {
+    /* background-color: red; */
+    text-align: center;
+}
+
+.c_svgs {
+    margin: 30px;
+    height: 50px;
+    width: 50px;
+    transition: all 0.6s;
 
 }
