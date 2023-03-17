@@ -4,11 +4,11 @@
 {% block content %}
 
 <h1 id="type-text"></h1>
-<a class="source_link" href="{{ index_data.main_text_source_link }}">{{ index_data.main_text_source }}</a>
+<a class="source_link" href="{{ main_text_source_link }}">{{ main_text_source }}</a>
 
 <script>
     var i = 0;
-    var txt = '{{ index_data.main_text }}'; /* The text */
+    var txt = '{{ main_text }}'; /* The text */
     var speed = 70; /* The speed/duration of the effect in milliseconds */
 
     function typeWriter() {
