@@ -1,5 +1,9 @@
 @import url("https://v1.fontapi.ir/css/MikhakFD:500?n=mikhak");
 
+* {
+  font-family: mikhak;
+}
+
 body {
   background-color: #111;
   color: #fefefe;
@@ -9,13 +13,6 @@ a {
   color: #fefefe;
   text-decoration: none;
 }
-
-/* @media screen and (prefers-color-scheme: light) {
-  body {
-    background-color: white;
-    color: black;
-  }
-} */
 
 #type-text {
   font-family: mikhak !important;
