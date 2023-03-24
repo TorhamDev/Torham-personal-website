@@ -7,11 +7,6 @@
     transition: all .6s;
 }
 
-.about_user_image:hover {
-    transition: all .6s;
-    height: 400px;
-}
-
 .person_description_about {
     display: flex;
     margin-top: 10px;
@@ -38,13 +33,12 @@
     }
 
     .about_user_image {
-        width: 222px;
+        width: 295px;
         margin-right: 35%;
     }
 
     .about_user_image:hover {
         transition: all .6s;
-        height: 300px;
     }
 
 
