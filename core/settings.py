@@ -27,12 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+# Application definition
 LOCAL_APPS = [
     "home.apps.HomeConfig",
     "utils.apps.UtilsConfig",
     "mentoring.apps.MentoringConfig",
 ]
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',

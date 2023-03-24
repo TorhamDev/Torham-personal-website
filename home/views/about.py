@@ -14,8 +14,12 @@ class AboutView(View):
 
     def get(self, request):
 
+        about_page_data = get_about_page_data()
+
         return render(
             request=request,
             template_name="about.html",
-            context={}
+            context={
+                "about_data": about_page_data,
+            }
         )
