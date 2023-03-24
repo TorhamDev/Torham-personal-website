@@ -16,3 +16,6 @@ class AboutPage(BaseModel):
     github_link = models.URLField()
     telegram_link = models.URLField()
     email = models.EmailField()
+
+    def __str__(self):
+        return f"{self.description[0:30]}..."
