@@ -33,8 +33,8 @@
     }
 
     .about_user_image {
-        width: 295px;
-        margin-right: 35%;
+        margin-right: 20%;
+        margin-left: 20%;
     }
 
     .about_user_image:hover {
@@ -44,9 +44,35 @@
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 468px) {
     .about_user_image {
-        display: none;
+        margin-right: 18%;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 386px) {
+    .about_user_image {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 354px) {
+    .about_user_image {
+        margin-right: 5%;
+        margin-left: 10%;
+    }
+
+
+}
+
+@media screen and (max-width: 336px) {
+    .about_user_image {
+        margin-right: 5%;
+        margin-left: 10%;
+        height: 20%;
+        width: 92%;
     }
 
 
