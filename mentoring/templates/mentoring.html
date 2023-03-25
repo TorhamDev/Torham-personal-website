@@ -50,7 +50,7 @@
     <hr class="mentoring_sprator">
 
     <div class="mentoring_form_div center">
-        <form action="/mentoring/" method="post">
+        <form action="/mentoring/" method="post" name="mentoring_form" onsubmit="return validateForm()">
             <input name="name" class="mentoring_input" type="text" minlength="1" maxlength="100" placeholder="اسمت چیه؟">
             <input name="phone_number" class="mentoring_input" minlength="10" type="text" maxlength="50" placeholder="شماره تلفن؟">
             <input name="offered_price" class="mentoring_input" minlength="1" type="text" placeholder="مبلغ پیشنهادی به تومن">
@@ -61,6 +61,40 @@
 
     </div>
 
+
+
+<script>
+
+function validateForm() {
+        let form = document.forms["mentoring_form"]
+        let name = form["name"].value;
+        let phone_number = form["phone_number"].value;
+        let offered_price = form["offered_price"].value;
+
+
+        if (name == "") {
+            swal("اسمت رو پر نکردی که 😑");
+            return false;
+        }
+        if (phone_number == "") {
+            swal("یک شماره تلفن باید بدی انگار 😂");
+            return false;
+        }
+        if (phone_number) {
+            regex = new RegExp("09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}");
+            let found = regex.test(phone_number);
+            if (found == false) {
+                swal("شماره تلفن اشتباه وارد کردی :(")
+                return false
+            }
+        }
+        if (offered_price == "") {
+            swal("باید یک مبلغی رو به تومن وارد کنی. اگه پول نداشتی میتونی صفر وارد کنی :)")
+            return false;
+        }
+    }
+
+</script>
 {% endif %}
 
 
