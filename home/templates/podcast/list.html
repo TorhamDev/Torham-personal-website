@@ -1,0 +1,51 @@
+{% extends 'extends/main.html' %}
+{% load static %}
+
+{% block title %}پادکست ها{% endblock title %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/podcast.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+  <div class="alert alert-danger alert-dismissible fade show alert-fixed" role="alert" id="connection-error" hidden>
+    خطا در برقراری ارتباط با سرور!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% if "search" in request.GET %}
+  <h1 class="title bold-font">جستجو برای {{ request.GET.search }}</h1>
+  {% else %}
+  <h1 class="title bold-font">آخرین پادکست ها</h1>
+  {% endif %}
+  <div class="row ms-3 mt-10" id="podcast-list">
+      {% include 'podcast/add.html' %}
+  </div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/audio.js' %}"></script>
+<script>
+  function success(response) {
+    document
+      .getElementById("podcast-list")
+      .insertAdjacentHTML("beforeend", response);
+    var parser = new DOMParser();
+    var html = parser.parseFromString(response, "text/html");
+    let newAudios = html.querySelectorAll("audio");
+    let indexes = new Array();
+    newAudios.forEach((audio) => {
+      indexes.push(audio.dataset.index);
+    });
+    let audios = document.querySelectorAll("audio");
+    audios.forEach((audio) => {
+      if (indexes.includes(audio.dataset.index)) {
+        setAudio(audio);
+      }
+    });
+  }
+  window.ready(function () {
+    getData("?page=", "{{ request.GET.page }}", success);
+  });
+</script>
+{% endblock script %}
