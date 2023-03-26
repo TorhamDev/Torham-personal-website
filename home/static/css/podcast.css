@@ -47,8 +47,22 @@ span {
 svg {
   transition: 0.3s;
 }
-.title {
+.title-group {
   margin: 50px 20px 60px 0;
+  display: flex;
+  align-items: center;
+}
+.title {
+  margin-left: 40px;
+}
+.rtl {
+  direction: rtl;
+}
+.search-input {
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  outline: none;
 }
 .ms-1 {
   margin-right: 2px;
