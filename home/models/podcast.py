@@ -29,5 +29,10 @@ class Podcast(BaseModel):
         help_text='podcast audio file',
     )
 
+    class Meta:
+        ordering = (
+            '-updated_at',
+        )
+
     def __str__(self) -> str:
         return self.name
