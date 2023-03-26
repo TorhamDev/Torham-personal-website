@@ -22,7 +22,8 @@ class Podcast(BaseModel):
                 allowed_extensions=[
                     'mp3',
                     'wav',
-                    'qcp',
+                    'ogg',
+                    'm4a',
                 ]
             )
         ],
