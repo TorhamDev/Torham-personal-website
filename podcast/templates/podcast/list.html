@@ -13,16 +13,17 @@
     خطا در برقراری ارتباط با سرور!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-  <div class="title-group">
-    {% if request.GET.search %}
-    <h1 class="title bold-font">جستجو برای "{{ request.GET.search }}"</h1>
-    {% else %}
-    <h1 class="title bold-font">آخرین پادکست ها</h1>
-    {% endif %}
-    <form action="">
-      {{ form.search }}
-    </form>
-  </div>
+  {% if request.GET.search %}
+  <h1 class="title bold-font">جستجو برای "{{ request.GET.search }}"</h1>
+  {% else %}
+  <h1 class="title bold-font">آخرین پادکست ها</h1>
+  {% endif %}
+  <form action="">
+    {{ form.search }}
+    <button class="search-btn">
+      جستجو
+    </button>
+  </form>
   <div class="row ms-3 mt-10" id="podcast-list">
       {% include 'podcast/add.html' %}
   </div>
