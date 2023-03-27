@@ -33,6 +33,7 @@ LOCAL_APPS = [
     "home.apps.HomeConfig",
     "utils.apps.UtilsConfig",
     "mentoring.apps.MentoringConfig",
+    "podcast.apps.PodcastConfig",
 ]
 
 INSTALLED_APPS = [

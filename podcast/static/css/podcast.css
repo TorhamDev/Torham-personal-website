@@ -51,6 +51,7 @@ svg {
   margin: 50px 20px 60px 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .title {
   margin-left: 40px;
@@ -82,7 +83,6 @@ svg {
 .me-3 {
   margin-left: 12px;
 }
-
 .mt-5 {
   margin-top: 20px;
 }
@@ -91,25 +91,81 @@ svg {
 }
 .podcast-item {
   margin-bottom: 100px;
-  max-width: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
+.podcast-item .cover {
+  width: 25%;
+}
+.podcast-item .body {
+  width: 70%;
+}
 .podcast-item h2 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .podcast-item img {
-  max-width: 100%;
-  margin-bottom: 20px;
+  width: 100%;
   border-radius: 10px;
 }
 .podcast-item .container {
   margin-bottom: 10px;
 }
 .podcast-item p {
-  text-align: center;
   width: 80%;
-  margin: auto;
+}
+@media only screen and (max-width: 992px) {
+  .podcast-item .cover {
+    width: 35%;
+  }
+  .podcast-item .body {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .podcast-item {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .podcast-item .cover {
+    width: 70%;
+  }
+  .podcast-item .body {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .podcast-item .cover {
+    width: 80%;
+  }
+  .podcast-item .body {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .podcast-item {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .podcast-item .cover {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+  }
+  .podcast-item .body {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+  }
+  .podcast-item .container {
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .podcast-item p {
+    text-align: center;
+    margin: auto;
+    width: 95%;
+  }
 }

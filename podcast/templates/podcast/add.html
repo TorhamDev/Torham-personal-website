@@ -1,0 +1,14 @@
+{% for podcast in podcasts %}
+  <div class="podcast-item">
+    <div class="cover">
+      <img src="{{ podcast.cover.url }}" class="img-thumbnail rounded" />
+    </div>
+    <div class="body">
+      <h2>{{ podcast.name }}</h2>
+      {% include 'podcast/audio.html' with src=podcast.file.url index=podcast.id %}
+      <p>
+        {{ podcast.description|linebreaks }}
+      </p>
+    </div>
+  </div>
+{% endfor %}

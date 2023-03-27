@@ -5,4 +5,3 @@ from home import models
 admin.site.register(models.IndexPage)
 admin.site.register(models.ProjectPage)
 admin.site.register(models.AboutPage)
-admin.site.register(models.Podcast)
