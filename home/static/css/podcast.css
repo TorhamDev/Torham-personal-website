@@ -1,0 +1,115 @@
+svg {
+  width: 20px;
+  height: 20px;
+}
+.container {
+  width: fit-content;
+  height: auto;
+  background-color: #6c5ce7;
+  border-radius: 25px;
+}
+.container > div {
+  display: flex;
+  align-items: center;
+}
+.playrate {
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #fefefe;
+}
+.btn {
+  border-radius: 30%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: none;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play {
+  display: flex;
+}
+.pause {
+  display: none;
+}
+.btn > svg {
+  fill: #fefefe;
+}
+.btn:hover > svg {
+  fill: #f39c12;
+}
+span {
+  transition: 0.3s;
+}
+svg {
+  transition: 0.3s;
+}
+.title-group {
+  margin: 50px 20px 60px 0;
+  display: flex;
+  align-items: center;
+}
+.title {
+  margin-left: 40px;
+}
+.rtl {
+  direction: rtl;
+}
+.search-input {
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  outline: none;
+}
+.ms-1 {
+  margin-right: 2px;
+}
+.ms-2 {
+  margin-right: 5px;
+}
+.ms-3 {
+  margin-right: 12px;
+}
+.me-1 {
+  margin-left: 2px;
+}
+.me-2 {
+  margin-left: 5px;
+}
+.me-3 {
+  margin-left: 12px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+.mt-10 {
+  margin-top: 40px;
+}
+.podcast-item {
+  margin-bottom: 100px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.podcast-item h2 {
+  margin-bottom: 15px;
+}
+.podcast-item img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.podcast-item .container {
+  margin-bottom: 10px;
+}
+.podcast-item p {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}

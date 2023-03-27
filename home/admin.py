@@ -1,7 +1,8 @@
 from django.contrib import admin
-from home.models import IndexPage, ProjectPage, AboutPage
+from home import models
 
 # Register your models here.
-admin.site.register(IndexPage)
-admin.site.register(ProjectPage)
-admin.site.register(AboutPage)
+admin.site.register(models.IndexPage)
+admin.site.register(models.ProjectPage)
+admin.site.register(models.AboutPage)
+admin.site.register(models.Podcast)
