@@ -16,7 +16,7 @@ class Podcast(BaseModel):
         help_text='podcast description',
     )
     file = models.FileField(
-        upload_to='audio/',
+        upload_to='audios/',
         validators=[
             FileExtensionValidator(
                 allowed_extensions=[
