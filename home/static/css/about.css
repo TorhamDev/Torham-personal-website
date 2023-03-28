@@ -4,7 +4,7 @@
     border-radius: 24px;
     margin-right: 59px;
     margin-top: 10px;
-    transition: all .6s;
+    object-fit: cover;
 }
 
 .person_description_about {
