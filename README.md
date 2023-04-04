@@ -7,6 +7,7 @@ A website powered by **Django** that is used as a personal website. 🐍🍃
 3. About/contact page 👨‍💻
 4. Mentoring app 👨‍🏫
 5. Podcast app 🎙
+6. Weblog 🌈
 
 
 ## Home Page 🏠
@@ -23,3 +24,10 @@ In this section, different people can fill a form and request mentoring. And the
 
 ## Podcast app 🎙
 In this section, you can upload your podcasts and share them with others.
+
+## Weblog 🌈
+link to your weblog =)
+
+
+## ScreenShot
+![home page](./readme_files/index_image.png)
