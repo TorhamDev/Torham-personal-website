@@ -95,3 +95,8 @@
     transition: all 0.6s;
 
 }
+
+.link {
+    color: #00f08b;
+    text-decoration: hwb;
+}
