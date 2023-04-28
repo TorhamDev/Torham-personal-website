@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 COPY . /app/
 
-RUN python manage.py makemigrations
+RUN python manage.py makemigrations home podcast mentoring
 
 RUN python manage.py migrate
 
