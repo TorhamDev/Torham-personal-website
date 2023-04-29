@@ -82,17 +82,27 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "torham_site",
-        "USER": os.environ.get("DB_USER", "root"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "mysql"),
-        "HOST":  os.environ.get("DB_HOST", "127.0.0.1"),  # Or an IP Address that your DB is hosted on
-        "PORT":  os.environ.get("DB_PORT", "3306")
-    },
-}
-
+if os.environ.get("IS_PRODUCTION") == "yes":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "torham_site",
+            "USER": os.environ.get("DB_USER", "root"),
+            "PASSWORD": os.environ.get("DB_PASSWORD", "mysql"),
+            # Or an IP Address that your DB is hosted on
+            "HOST":  os.environ.get("DB_HOST", "127.0.0.1"),
+            "PORT":  os.environ.get("DB_PORT", "3306")
+        },
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            # This is where you put the name of the db file.
+            'NAME': 'db',
+            # If one doesn't exist, it will be created at migration time.
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
