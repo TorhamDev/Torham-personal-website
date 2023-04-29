@@ -5,3 +5,4 @@ Pillow==9.4.0
 pycodestyle==2.10.0
 sqlparse==0.4.3
 tomli==2.0.1
+mysqlclient==2.1.1
