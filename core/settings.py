@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ["https://torham-site.darkube.app"]
+CSRF_TRUSTED_ORIGINS = ["https://torham.tech/"]
 
 # Application definition
 LOCAL_APPS = [
