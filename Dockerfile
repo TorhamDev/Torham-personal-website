@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM hub.hamdocker.ir/python:3.10
 
 WORKDIR /app
 
