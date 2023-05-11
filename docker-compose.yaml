@@ -17,8 +17,7 @@ services:
     image: hub.hamdocker.ir/mysql
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'root'
+      MYSQL_DATABASE: 'torham_site'
       MYSQL_PASSWORD: 'mysql'
       MYSQL_ROOT_PASSWORD: 'mysql'
     ports:
