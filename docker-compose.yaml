@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  nginx:
+    image: hub.hamdocker.ir/nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx.conf.d/:/etc/nginx/conf.d/
+    networks:
+      - main
+  
+  db:
+    image: hub.hamdocker.ir/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'mysql'
+      MYSQL_ROOT_PASSWORD: 'mysql'
+    ports:
+      - '3306:3306'
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+    networks:
+      - main
+
+  torhamsite:
+    container_name: torham-site
+    build: .
+    restart: always
+    environment:
+      SECRET_KEY: 'YOUR_SECRET_KEY'
+      IS_PRODUCTION: 'yes'
+      DB_USER: 'root'
+      DB_PASSWORD: 'mysql'
+      DB_HOST: 'db'
+      DB_PORT: 3306
+    depends_on:
+      - db
+      - nginx
+    networks:
+      - main
+
+networks:
+  main:

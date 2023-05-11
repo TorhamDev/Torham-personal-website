@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ["https://torham.tech"]
+CSRF_TRUSTED_ORIGINS = ["https://torham.tech", "http://torham.tech"]
 
 # Application definition
 LOCAL_APPS = [
