@@ -20,8 +20,6 @@ services:
       MYSQL_DATABASE: 'torham_site'
       MYSQL_PASSWORD: 'mysql'
       MYSQL_ROOT_PASSWORD: 'mysql'
-    ports:
-      - '3306:3306'
     volumes:
       - /var/lib/mysql:/var/lib/mysql
     networks:
