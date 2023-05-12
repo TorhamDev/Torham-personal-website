@@ -2,31 +2,28 @@
 
 
 {% block content %}
-
-<h1 id="type-text"></h1>
-<a class="source_link" href="{{ main_text_source_link }}">{{ main_text_source }}</a>
-
-
-<center>
-    <a href="/about">
-        <button class="dark_white_btn index_btn">
+<main class="text-white">
+    <div class="grid place-items-center h-screen flex">
+      <div class="text-center ">
+       <h1 class="max-[780px]:text-6xl max-[450px]:text-3xl text-7xl mb-10" id="feature-text"></h1> 
+       <a href=""> <p class="max-[780px]:text-3xl max-[360px]:text-lg text-4xl mt-10 underline ">- جادی، درک برنامه‌نویسی قسمت اول</p></a>
+      </div>
+      <a href="./about.html">
+      <div class="mb-4">
+        <div
+          class="b animate-bounce mx-auto h-16 w-64 flex justify-center items-center  hover:text-gray-950"
+        >
+          <div
+            class="border  hover:bg-white i h-16 w-full bg-gradient-to-br items-center rounded-xl shadow-2xl cursor-pointer  overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"
+          >
+          <p
+            class="text-center font-semibold z-10 pointer-events-none  p-3.5">
             درباره تورهام =)
-        </button>
-    </a>
-</center>
-<script>
-    var i = 0;
-    var txt = '{{ main_text }}'; /* The text */
-    var speed = 70; /* The speed/duration of the effect in milliseconds */
-
-    function typeWriter() {
-        if (i < txt.length) {
-            document.getElementById("type-text").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
-    }
-    typeWriter()
-</script>
-
+          </p>
+        </div>
+        </div>
+      </div>
+      </a>
+    </div>
+  </main>
 {% endblock %}

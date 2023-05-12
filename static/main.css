@@ -1,0 +1,15 @@
+@import url("https://v1.fontapi.ir/css/MikhakFD:500?n=mikhak");
+
+* {
+    font-family: mikhak;
+}
+
+.text-7xl {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.text-4xl {
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+}

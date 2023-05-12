@@ -9,94 +9,136 @@
 {% block content %}
 
 
-{% if message == "sended" %}
-    <center>
-        <h1>
-            هورا درخواست ارسال شد. درخواستت بررسی میکنم باهات تماس میگیرم :)
-        </h1>
 
-        <a href="/">
-            <button class="dark_white_btn">
-                باشه، ممنون
-            </button>
-        </a>
-    </center>
+<main>
 
-{% elif  message == "notsended"%}
-<center>
-    <h1>
-        ⚠️ یک مشکلی داریم. 
-        <br>
-        <br>
-        درخواستت ارسال نشد. احتمالا فرم کامل پر نکردی یا یک مشکلی از سمت سرور بوده :( فرم دوباره پر کن لطفا
 
-    </h1>
-
-    <a href="/mentoring">
-        <button class="dark_white_btn">
-            پُر کردن دوباره
-        </button>
-    </a>
-</center>
-
-{% else %}
-    <div class="mentoring_description_div">
-        <p class="mentoring_description">
-            {{ description|safe }}
+    <div class="mentoring_description_div mx-auto text-center container mb-10 mt-10 text-2xl">
+        <p class="mentoring_description text-white ">
+            منتورینگ در لغت به معنا مربیگری، یعنی کسی که مربیته دیگ، آره خلاصه. <br> 
+اما استفاده من ازش چیه؟ قراره اگه داخل موضوعی مشکل داشتید، سوالی داشتید ( سوالات، یکدونه و دوتا و سه‌تا و... که ایمیل بزنید جوابه ) میتونید درخواست رو پر کنید و من خودم احتمالا باهاتون تماس خواهم گرفت. <br>
+ حالا شاید واقعا بخوایید مربی‌تون/همراه‌تون بشم، کی میدونه. در اون صورت هم میتونید این فیلد رو پر کنید. <br><br>
+ نکته خیییلییی مهم : تورهام تو که دنبال پول نبودی( هرکی گفت پول نمیخواد دروغ گفته) اون مبلغ پیشنهادی چی میگه؟ یک دلیل داره، اونم اینه که کسی که بخواد واقعا به جواب چیزی برسه یا کمک و همراهی‌ای داشته باشه و ازش استفاده کنه، در حقیقت واقعا بخاد داخل این مسیر پیشرفت کنه حاضره مقدار کمی پول خرج کنه ( ازش به عنوان فرایند فیلتر کردن درخواست ها استفاد میکنم :) ). مثلا آخرین منتورینگ من ۱۵۰ هزار تومن بود ( چقدر گوگولی مگه نه؟ )
         </p>
 
     </div>
 
-    <hr class="mentoring_sprator">
+    <hr class="w-2/4 h-1 mx-auto my-1 bg-blue-700 border-0 rounded md:my-10 dark:bg-blue-600">
 
-    <div class="mentoring_form_div center">
-        <form action="/mentoring/" method="post" name="mentoring_form" onsubmit="return validateForm()">
-            <input name="name" class="mentoring_input" type="text" minlength="1" maxlength="100" placeholder="اسمت چیه؟">
-            <input name="phone_number" class="mentoring_input" minlength="10" type="text" maxlength="50" placeholder="شماره تلفن؟">
-            <input name="offered_price" class="mentoring_input" minlength="1" type="text" placeholder="مبلغ پیشنهادی به تومن">
-            <textarea name="mentor_description" id="mentoring_description" rows="7" placeholder="اگه حرفی داری بنویس. :) مثلا روش ارتباطی دیگه یا توضیحی درباره شخصیت خودت."></textarea>
-            {% csrf_token %}
-            <button class="btn">ارسال درخواست</button>
-        </form>
+    <form class="w-9/12 mx-auto mb-20 ">
+      
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="email"
+          name="floating_email"
+          id="floating_email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >ایمیل خود را وارد کنید</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input
+          type="password"
+          name="floating_password"
+          id="floating_password"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="floating_password"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >پسورد</label
+        >
+      </div>
 
-    </div>
+      <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            type="text"
+            name="floating_first_name"
+            id="floating_first_name"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="floating_first_name"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >نام شما؟</label
+          >
+        </div>
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            type="text"
+            name="floating_last_name"
+            id="floating_last_name"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="floating_last_name"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >نام خانوادگی شما</label
+          >
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            name="floating_phone"
+            id="floating_phone"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="floating_phone"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >شماره ی شما؟</label
+          >
+        </div>
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            type="text"
+            name="floating_company"
+            id="floating_company"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="floating_company"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >شرکت</label
+          >
+        </div>
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <textarea
+         name="" id="textarea" cols="30" rows="10" placeholder="مبحث خود را بیان کنید"
+         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            
+         ></textarea>
 
-
-
-<script>
-
-function validateForm() {
-        let form = document.forms["mentoring_form"]
-        let name = form["name"].value;
-        let phone_number = form["phone_number"].value;
-        let offered_price = form["offered_price"].value;
-
-
-        if (name == "") {
-            swal("اسمت رو پر نکردی که 😑");
-            return false;
-        }
-        if (phone_number == "") {
-            swal("یک شماره تلفن باید بدی انگار 😂");
-            return false;
-        }
-        if (phone_number) {
-            regex = new RegExp("09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}");
-            let found = regex.test(phone_number);
-            if (found == false) {
-                swal("شماره تلفن اشتباه وارد کردی :(")
-                return false
-            }
-        }
-        if (offered_price == "") {
-            swal("باید یک مبلغی رو به تومن وارد کنی. اگه پول نداشتی میتونی صفر وارد کنی :)")
-            return false;
-        }
-    }
-
-</script>
-{% endif %}
-
+      </div>
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Submit
+      </button>
+    </form>
+  </main>
 
 
 {% endblock %}
