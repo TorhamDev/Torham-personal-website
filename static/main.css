@@ -1,7 +1,12 @@
-@import url("https://v1.fontapi.ir/css/MikhakFD:500?n=mikhak");
+@font-face {
+    font-family: 'Mikhak';
+    font-weight: 500;
+    font-style: normal;
+    src: url("http://127.0.0.1:8002/static/assets/font/Mikhak-DS1-Regular.woff2") format('woff2');
+}
 
 * {
-    font-family: mikhak;
+    font-family: Mikhak;
 }
 
 .text-7xl {
