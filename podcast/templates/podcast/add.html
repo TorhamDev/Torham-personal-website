@@ -1,14 +1,22 @@
 {% for podcast in podcasts %}
-  <div class="podcast-item">
-    <div class="cover">
-      <img src="{{ podcast.cover.url }}" class="img-thumbnail rounded" />
-    </div>
-    <div class="body">
-      <h2>{{ podcast.name }}</h2>
-      {% include 'podcast/audio.html' with src=podcast.file.url index=podcast.id %}
-      <p>
+  <div class="podcast-item flex justify-between items-center md:mr-16 mt-16 mb-16">
+    <div class="cover w-1/4">
+      <img
+        src="{{ podcast.cover.url }}"
+        class="img-thumbnail rounded"
+      />
+  </div>
+  <div class="body w-3/4 mr-14">
+    <h2 class="title-padcast  text-white text-4xl mb-10">
+      {{ podcast.name }}
+    </h2>
+    {% include 'podcast/audio.html' %}
+    <div class='text-white'>
+      <p></p>
+      <p class="text-white text-lg w-4/5">
         {{ podcast.description|linebreaks }}
       </p>
+      <p></p>
     </div>
   </div>
 {% endfor %}

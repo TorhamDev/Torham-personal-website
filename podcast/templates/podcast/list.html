@@ -1,36 +1,53 @@
 {% extends 'extends/main.html' %}
 {% load static %}
 
-{% block title %}پادکست ها{% endblock title %}
+{% block content %}
+<main>
+  <form class="w-11/12 ml-auto mr-auto">
+    <div class="mb-3">
+      <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+        <input
+          type="search"
+          class="rounded-r relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-300 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-slate-50"
+          placeholder="جستجو..."
+          aria-label="Search"
+          aria-describedby="button-addon1"
+        />
 
-{% block header %}
-<link rel="stylesheet" href="{% static 'css/podcast.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+        <!--Search button-->
+        <button
+          class="border hover:bg-white hover:text-neutral-700 i h-16 bg-gradient-to-br items-center rounded-xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+          type="submit"
+          id="button-addon1"
+          data-te-ripple-init
+          data-te-ripple-color="light"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-5 w-5 text-center"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="row ms-3 mt-10 mb-10 w-11/12" id="podcast-list">
+    {% include 'podcast/add.html' %}
+  </div>
+</main>
 {% endblock %}
 
-{% block content %}
-  <div class="alert alert-danger alert-dismissible fade show alert-fixed" role="alert" id="connection-error" hidden>
-    خطا در برقراری ارتباط با سرور!
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  {% if request.GET.search %}
-  <h1 class="title bold-font">جستجو برای "{{ request.GET.search }}"</h1>
-  {% else %}
-  <h1 class="title bold-font">آخرین پادکست ها</h1>
-  {% endif %}
-  <form action="">
-    {{ form.search }}
-    <button class="search-btn">
-      جستجو
-    </button>
-  </form>
-  <div class="row ms-3 mt-10" id="podcast-list">
-      {% include 'podcast/add.html' %}
-  </div>
-{% endblock content %}
 
 {% block script %}
 <script src="{% static 'js/audio.js' %}"></script>
+<script src="{% static 'js/functions.js' %}"></script>
 <script>
   function success(response) {
     document

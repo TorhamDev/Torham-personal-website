@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container-padcast mb-10">
   <audio
     type="audio/mp3"
-    src="{{ src }}"
+    src="{{ podcast.file.url }}"
     preload="true"
-    data-index="{{ index }}"
+    data-index="{{ podcast.id }}"
   ></audio>
-  <div class="button-group-{{ index }}">
+  <div class="button-group-{{ podcast.id }}">
     <button draggable="true" class="btn forward ms-2">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path
           d="M512 96.03v319.9c0 17.67-14.33 31.1-31.1 31.1C462.3 447.1 448 433.6 448 415.1V284.1l-171.5 156.5C255.9 457.7 224 443.3 224 415.1V284.1l-171.5 156.5C31.88 457.7 0 443.3 0 415.1V96.03c0-27.37 31.88-41.74 52.5-24.62L224 226.8V96.03c0-27.37 31.88-41.74 52.5-24.62L448 226.8V96.03c0-17.67 14.33-31.1 31.1-31.1C497.7 64.03 512 78.36 512 96.03z"
-        />
+        ></path>
       </svg>
     </button>
     <button draggable="true" class="btn forw me-2">
@@ -38,12 +38,12 @@
 -97 48 -5 64 -2 119 25 35 17 396 221 803 454 709 406 741 426 768 470 54 86
 45 189 -22 258 -24 24 -296 185 -806 476 l-769 439 -66 2 c-46 2 -74 -2 -95
 -13z"
-          />
+          ></path>
         </g>
       </svg>
     </button>
     <button draggable="true" class="btn playrate ms-2 me-2">
-      <div class="playrate"></div>
+      00:02
     </button>
     <button draggable="true" class="btn backw ms-2">
       <svg
@@ -70,7 +70,7 @@
 -790 470 -207 60 -181 58 -1060 62 -569 2 -818 7 -838 15 -15 6 -35 24 -43 39
 -13 26 -11 41 26 188 22 88 40 176 40 196 0 73 -49 149 -122 186 -44 22 -128
 25 -173 5z"
-          />
+          ></path>
         </g>
       </svg>
     </button>
@@ -78,22 +78,30 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path
           d="M0 415.1V96.03c0-17.67 14.33-31.1 31.1-31.1C49.67 64.03 64 78.36 64 96.03v131.8l171.5-156.5C256.1 54.28 288 68.66 288 96.03v131.9l171.5-156.5C480.1 54.28 512 68.66 512 96.03v319.9c0 27.37-31.88 41.74-52.5 24.62L288 285.2v130.7c0 27.37-31.88 41.74-52.5 24.62L64 285.2v130.7c0 17.67-14.33 31.1-31.1 31.1C14.33 447.1 0 433.6 0 415.1z"
-        />
+        ></path>
       </svg>
     </button>
-    <button draggable="true" class="btn pause ms-3 me-2">
+    <button
+      draggable="true"
+      class="btn pause ms-3 me-2"
+      style="display: none"
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
         <path
           class="fa-primary"
           d="M272 63.1c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48s48-21.49 48-48v-288C320 85.49 298.5 63.1 272 63.1zM48 63.1c-26.51 0-48 21.49-48 48v288C0 426.5 21.49 448 48 448S96 426.5 96 400v-288C96 85.49 74.51 63.1 48 63.1z"
-        />
+        ></path>
       </svg>
     </button>
-    <button draggable="true" class="btn play ms-3 me-2">
+    <button
+      draggable="true"
+      class="btn play ms-3 me-2"
+      style="display: flex"
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path
           d="M176 480C148.6 480 128 457.6 128 432v-352c0-25.38 20.4-47.98 48.01-47.98c8.686 0 17.35 2.352 25.02 7.031l288 176C503.3 223.8 512 239.3 512 256s-8.703 32.23-22.97 40.95l-288 176C193.4 477.6 184.7 480 176 480z"
-        />
+        ></path>
       </svg>
     </button>
   </div>
